@@ -53,7 +53,7 @@ def main():
 			bot_move(game_board, win_track, last_moves)
 			move_count += 1
 			check_mini_boards( game_board, win_track, 'X')
-
+			print(last_moves)
 			for game in game_board:
 				print(game)
 		else:
@@ -61,8 +61,6 @@ def main():
 			move_count += 1
 			check_mini_boards( game_board, win_track, 'Y')
 
-			for game in game_board:
-				print(game)
 
 ####################################################################
 # Checks the mini_boards to update win_track
@@ -206,7 +204,6 @@ def bot_move(game_board, win_track, last_moves):
 
 	# keep using the square of the previous mini_board bot move
 	else:
-		print(last_moves)
 		prev_bot_move = last_moves["bot"][1]
 		if game_board[ previous_move ][ prev_bot_move ] == "X":
 			win_mini_board = open_move_map[ str(prev_bot_move) ]
